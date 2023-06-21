@@ -30,7 +30,7 @@ public suspend fun CreateChat(): JsonNode {
             headers {
                 append(HttpHeaders.Accept, "application/json")
                 append(HttpHeaders.AcceptLanguage, "en-US,en;q=0.9")
-                append(HttpHeaders.Cookie,"_U=${cookie};MUID=${MUID}")
+                append(HttpHeaders.Cookie,"_U=${cookie};MUID=${MUID}")//可以不带cookie但有请求限制，建议带着
                 append(HttpHeaders.ContentType, "application/json")
                 append(HttpHeaders.Referrer, "https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx")
                 append(HttpHeaders.XForwardedFor, "1.1.1.1")
