@@ -13,8 +13,8 @@ import java.net.InetSocketAddress
 import java.net.Proxy
 
 
-val cookie = ""
-val MUID = ""
+val cookie = ""//自己卡bing的cooike中的_U
+val MUID = ""//MUID
 public suspend fun CreateChat(): JsonNode {
     try {
         val client = HttpClient() {
