@@ -13,8 +13,8 @@ import java.net.InetSocketAddress
 import java.net.Proxy
 
 
-val cookie = "1q2qTzjcj2bxn0ih_S2nIpXFHLtPTCf1-xaZt8bRxD9SaZCw9C29968nRJOqZ5tphCkPrH5M39bhjAxNNsUPOSsC7mm8OMmB-7BGjLiNJT2kZjoWtXSy334QU0Oe2wHqpzdksf9mveThb3eTyaM8UdEpIUdc3DJo94_ZTYf2ranZQ4Sl6G9WRFox-6GuexH6Xfr0vPr8QktD5kJKRSHEY-Q"
-val MUID = "288286E1886E6B7401D695F48C6E6DE1"
+val cookie = ""//自己卡bing的cooike中的_U
+val MUID = ""//MUID
 public suspend fun CreateChat(): JsonNode {
     try {
         val client = HttpClient() {
@@ -30,7 +30,7 @@ public suspend fun CreateChat(): JsonNode {
             headers {
                 append(HttpHeaders.Accept, "application/json")
                 append(HttpHeaders.AcceptLanguage, "en-US,en;q=0.9")
-                append(HttpHeaders.Cookie,"_U=${cookie};MUID=${MUID}")
+                append(HttpHeaders.Cookie,"_U=${cookie};MUID=${MUID}")//可以不带cookie但有请求限制，建议带着
                 append(HttpHeaders.ContentType, "application/json")
                 append(HttpHeaders.Referrer, "https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx")
                 append(HttpHeaders.XForwardedFor, "1.1.1.1")

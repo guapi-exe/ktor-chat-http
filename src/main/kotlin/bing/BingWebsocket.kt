@@ -195,7 +195,9 @@ class bingwebsocket {
 
 
 
-        val ws = createws()
+        val ws = withTimeoutOrNull(1000*60*2) {
+            createws()
+        }
         val newmessage = message.replace("'","\"")
         ws.send(newmessage)
         logger.info{"send:$newmessage"}
