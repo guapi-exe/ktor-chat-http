@@ -10,7 +10,7 @@ plugins {
 group = "com.guapi.chat"
 version = "0.0.1"
 application {
-    mainClass.set("com.guapi.chat.ApplicationKt")
+    mainClass.set("bing.BingMainKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -20,8 +20,15 @@ repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") }
 }
+tasks.shadowJar {
+    manifest {
+        attributes(mapOf("Main-Class" to "bing.BingMainKt")) // 指定主类地址
+    }
+}
+
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0") // 添加 Kotlin 协程库依赖
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-json:$ktor_version")

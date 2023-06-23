@@ -1,5 +1,5 @@
 package bingimage
 
-suspend fun main(){
+suspend fun imagemain(){
     bingimage().createimage("风景画")
 }
